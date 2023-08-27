@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/meal_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.foodcycle.fragments.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchMealFragment"
+            app:destination="@id/searchMealFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchForMeal"
+            app:destination="@id/searchForMeal" />
+        <action
+            android:id="@+id/action_homeFragment_to_webSearchFragment"
+            app:destination="@id/webSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchMealFragment"
+        android:name="com.example.foodcycle.fragments.searchMealByIngredient.SearchMealFragment"
+        android:label="Search meals by ingredients"
+        tools:layout="@layout/fragment_search_meal">
+        <action
+            android:id="@+id/action_searchMealFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchForMeal"
+        android:name="com.example.foodcycle.fragments.searchForMeal.SearchForMeal"
+        android:label="Search meal from Database"
+        tools:layout="@layout/fragment_search_for_meal" >
+        <action
+            android:id="@+id/action_searchForMeal_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webSearchFragment"
+        android:name="com.example.foodcycle.fragments.webSearch.WebSearchFragment"
+        android:label="Search Meals from Web Service"
+        tools:layout="@layout/fragment_web_search">
+        <action
+            android:id="@+id/action_webSearchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
